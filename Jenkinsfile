@@ -4,7 +4,7 @@ pipeline{
       stage('clone')
       {
         steps{
-          git branch 'main','url':
+          git branch 'main','url':'https://github.com/saivarsha1008/calculator.git'
         }
       }
       stage('build')
