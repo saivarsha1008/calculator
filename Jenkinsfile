@@ -1,22 +1,24 @@
-pipeline{
-  agent any{
-    stages{
-      stage('clone')
-      {
-       steps {
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
                 git branch: 'main',
                     url: 'https://github.com/saivarsha1008/calculator.git'
-      }
-      }
-      stage('build')
-      {
-        steps{
-          sh javac calculator.java 
+            }
         }
-      }
-      stage('test')
-      {
-        steps{
-          sh java calculator 25 5
+
+        stage('Build') {
+            steps {
+                sh 'javac calculator.java'
+            }
         }
-      }
+
+        stage('Test') {
+            steps {
+                sh 'java calculator 25 5'
+            }
+        }
+    }
+}
