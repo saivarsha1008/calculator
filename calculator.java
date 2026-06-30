@@ -1,20 +1,18 @@
-import java.util.Scanner;
-
 public class calculator {
 
     public static void main(String[] args) {
 
-        double num1, num2;
-        Scanner sc = new Scanner(System.in);
+        if (args.length != 3) {
+            System.out.println("Usage: java calculator <num1> <num2> <operator>");
+            return;
+        }
 
-        System.out.println("Enter the numbers:");
-        num1 = sc.nextDouble();
-        num2 = sc.nextDouble();
-
-        System.out.println("Enter the operator (+, -, *, /):");
-        char operator = sc.next().charAt(0);
+        double num1 = Double.parseDouble(args[0]);
+        double num2 = Double.parseDouble(args[1]);
+        char operator = args[2].charAt(0);
 
         double result;
+
         switch (operator) {
             case '+':
                 result = num1 + num2;
@@ -40,9 +38,9 @@ public class calculator {
                 System.out.println("Invalid operator.");
                 return;
         }
+
         System.out.println("The final result:");
         System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
     }
 }
-
 
