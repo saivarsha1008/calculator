@@ -17,7 +17,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'java calculator 25 5'
+                sh 'java calculator 25 5 +'
             }
         }
     }
